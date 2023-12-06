@@ -21,9 +21,7 @@ $oke1 = mysqli_fetch_array($oke);
 
                 <h3>
                   <strong><center><h1>SELAMAT DATANG</h1></center></strong><br>
-                  <center><h2><?php echo $oke1 ['nama_lengkap']; ?> DI APLIKASI ONLINE CLASS M'TECH</h2></center>
-                  <span style="font-weight:normal">
-                  <br><center><h2>LEMBAGA KURSUS CV. MADURA TECHNOVATION</h2></center></span>
+                  <center><h2><?php echo $oke1 ['nama_lengkap']; ?> DI APLIKASI ONLINE CLASS MANSAPES</h2></center>
                 </h3>
 
 
@@ -34,7 +32,7 @@ $oke1 = mysqli_fetch_array($oke);
         <div class="row d-flex justify-content-center">
           <div class="col-md-11">
             <div style="height:100%;width:100%">
-              <img src="../vendor/images/IMG_0525.jpg" alt="ONLINE CLASS M'TECH" width="100%" height="90%">
+              <img src="../vendor/images/" alt="ONLINE CLASS MANSAPES" width="100%" height="90%">
             </div>
           </div>
         </div>
