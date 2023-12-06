@@ -48,7 +48,7 @@ if (@$_SESSION['Admin']) {
       <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-left col-lg-6" style="background-color: #517fd4">
           <a class="navbar-brand brand-logo" href="index.php" style="font-family:Aegyptus;font-weight: bold;font-size: 30px;">
-            <img src="../vendor/images/MTC.png" class="animated-logo" alt="logo" style="height: 45px;width: 45px;border-radius: 10px;"> <b style="color:#fff">ONLINE CLASS M'TECH</b>
+            <img src="../vendor/images/MTC.png" class="animated-logo" alt="logo" style="height: 45px;width: 45px;border-radius: 10px;"> <b style="color:#fff">ONLINE CLAss mansapes</b>
 
 
           </a>
@@ -273,7 +273,7 @@ if (@$_SESSION['Admin']) {
         <footer class="footer">
           <div class="container-fluid clearfix d-flex justify-content-between align-items-center">
             <span class="text-info d-block text-center text-sm-left d-sm-inline-block">
-              Copyright&copy; cv.maduratechnovation 2022
+              Copyright&copy; MAN 1 PESAWARAN 2023
             </span>
 
             <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"><img src="../vendor/images/mtc2.png" alt="footer_image" style='height:45px;margin-right: -15px'><i class="fa fa-graduation-cap text-danger"></i></span>
