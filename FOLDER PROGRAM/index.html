@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,33 +11,31 @@
 <body>
 
     <div class="container" id="container">
-        <div class="form-container sign-up">
-            <form>
+        <div class="form-container guru">
+            <form id="login_guru">
                 <h1>Login Guru</h1>
-                <input type="text" placeholder="UserName">
-                <input type="password" placeholder="password">
-                <button>Sign In</button>
+                <input type="text" id="username_guru" placeholder="Username" required>
+                <input type="password" id="password_guru" placeholder="password" required>
+                <button type="submit">Sign In</button>
             </form>
         </div>
-        <div class="form-container sign-in">
-            <form>
+        <div class="form-container siswa">
+            <form id="login_siswa">
                 <h1>Login Siswa</h1>
-
-                <input type="text" placeholder="UserName">
-                <input type="password" placeholder="Password">
-                <button>Sign In</button>
+                <input type="text" id="username_siswa" placeholder="Username" required>
+                <input type="password" id="password_siswa" placeholder="Password" required>
+                <button type="submit">Sign In</button>
             </form>
         </div>
         <div class="toggle-container">
             <div class="toggle">
                 <div class="toggle-panel toggle-left">
                     <h1>Login Siswa</h1>
-                    <button class="hidden" id="login">click <<</button>
+                    <button class="hidden" id="siswa">click <<</button>
                 </div>
                 <div class="toggle-panel toggle-right">
                     <h1>Login Guru</h1>
-
-                    <button class="hidden" id="register">click >></button>
+                    <button class="hidden" id="guru">click >></button>
                 </div>
             </div>
         </div>
@@ -46,16 +43,118 @@
 
     <script>
         const container = document.getElementById('container');
-        const registerBtn = document.getElementById('register');
-        const loginBtn = document.getElementById('login');
+        const guruBtn = document.getElementById('guru');
+        const siswaBtn = document.getElementById('siswa');
 
-        registerBtn.addEventListener('click', () => {
+        guruBtn.addEventListener('click', () => {
             container.classList.add("active");
         });
 
-        loginBtn.addEventListener('click', () => {
+        siswaBtn.addEventListener('click', () => {
             container.classList.remove("active");
         });
+
+        document.getElementById('login_siswa').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            let username_siswa = document.querySelector("#username_siswa");
+            let password_siswa = document.querySelector("#password_siswa");
+            let username_guru = document.querySelector("#username_siswa");
+            let password_guru = document.querySelector("#password_siswa");
+
+            if (username && password) {
+                window.setTimeout(function () {
+                    window.location.href = ".html";
+                }, 2000);
+            } else {
+                alert('Username atau password salah');
+            }
+        });
+        document.getElementById('login_guru').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            let username = document.querySelector("#username");
+            let password = document.querySelector("#password");
+
+            if (username && password) {
+                window.setTimeout(function () {
+                    window.location.href = ".html";
+                }, 2000);
+            } else {
+                alert('Username atau password salah');
+            }
+        });
+        const keyUsernamesiswa = (event) => {
+            if (
+                (event.key >= "a" && event.key <= "z") ||
+                (event.key >= "A" && event.key <= "Z")
+            ) {
+                return true;
+            } else {
+                return false;
+            }
+        };
+        const keyPasswordsiswa = (event) => {
+            if (
+                (event.key >= "a" && event.key <= "z") ||
+                (event.key >= "A" && event.key <= "Z") ||
+                (event.key >= "0" && event.key <= "9")
+            ) {
+                return true;
+            } else {
+                return false;
+            }
+        };
+        const keyEntersiswa = (event, component) => {
+            if (event.key == "Enter") {
+                component.focus();
+            }
+        };
+        const keyUsernameguru = (event) => {
+            if (
+                (event.key >= "a" && event.key <= "z") ||
+                (event.key >= "A" && event.key <= "Z")
+            ) {
+                return true;
+            } else {
+                return false;
+            }
+        };
+        const keyPasswordguru = (event) => {
+            if (
+                (event.key >= "a" && event.key <= "z") ||
+                (event.key >= "A" && event.key <= "Z") ||
+                (event.key >= "0" && event.key <= "9")
+            ) {
+                return true;
+            } else {
+                return false;
+            }
+        };
+        const keyEnterguru = (event, component) => {
+            if (event.key == "Enter") {
+                component.focus();
+            }
+        };
+        username_siswa.addEventListener(
+            "keypress",
+            (event) => (event.returnValue = keyUsernamesiswa(event))
+        );
+        password_siswa.addEventListener(
+            "keypress",
+            (event) => (event.returnValue = keyPasswordsiswa(event))
+        );
+        username_siswa.addEventListener("keyup", (event) => keyEntersiswa(event, password_siswa)
+        );
+        username_guru.addEventListener(
+            "keypress",
+            (event) => (event.returnValue = keyUsernameguru(event))
+        );
+        password_guru.addEventListener(
+            "keypress",
+            (event) => (event.returnValue = keyPasswordguru(event))
+        );
+        username_guru.addEventListener("keyup", (event) => keyEnterguru(event, password_guru));
     </script>
 </body>
 
