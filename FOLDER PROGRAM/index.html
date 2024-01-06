@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -59,12 +60,11 @@
 
             let username_siswa = document.querySelector("#username_siswa");
             let password_siswa = document.querySelector("#password_siswa");
-            let username_guru = document.querySelector("#username_siswa");
-            let password_guru = document.querySelector("#password_siswa");
 
-            if (username && password) {
+
+            if (username_siswa && password_siswa) {
                 window.setTimeout(function () {
-                    window.location.href = ".html";
+                    window.location.href = "home.html";
                 }, 2000);
             } else {
                 alert('Username atau password salah');
@@ -73,12 +73,12 @@
         document.getElementById('login_guru').addEventListener('submit', function (event) {
             event.preventDefault();
 
-            let username = document.querySelector("#username");
-            let password = document.querySelector("#password");
+            let username_guru = document.querySelector("#username_siswa");
+            let password_guru = document.querySelector("#password_siswa");
 
-            if (username && password) {
+            if (username_guru && password_guru) {
                 window.setTimeout(function () {
-                    window.location.href = ".html";
+                    window.location.href = "indexguru.html";
                 }, 2000);
             } else {
                 alert('Username atau password salah');
