@@ -63,30 +63,21 @@ window.onscroll = () =>{
    }
 }
 
+function cari() {
+   let filter = document.getElementById('search-input').value.toUpperCase();
+   let kotakItems = document.querySelectorAll('.box');
 
+   for (let i = 0; i < kotakItems.length; i++) {
+       let h3Element = kotakItems[i].querySelector('.title');
+       let infoElement = kotakItems[i].querySelector('.info');
 
-document.addEventListener('DOMContentLoaded', function() {
-   const searchForm = document.getElementById('search-form');
-   const searchBox = document.getElementById('search-box');
+       let nilaiH3 = h3Element.innerHTML || h3Element.innerText || h3Element.textContent;
+       let nilaiInfo = infoElement.innerHTML || infoElement.innerText || infoElement.textContent;
 
-   searchForm.addEventListener('submit', function(event) {
-     event.preventDefault(); // Mencegah perilaku pengiriman formulir default
-
-     // Dapatkan istilah pencarian
-     const searchTerm = searchBox.value.trim().toLowerCase();
-
-     // Dapatkan semua elemen dengan kelas "info"
-     const infoElements = document.querySelectorAll('.info','.title');
-
-     // Iterasi melalui elemen-elemen tersebut dan lakukan tindakan sesuai
-     infoElements.forEach(function(infoElement) {
-       // Misalnya, tambahkan kelas "highlight" ke elemen dengan kelas "info" yang mengandung istilah pencarian
-       if (infoElement.textContent.toLowerCase().includes(searchTerm)) {
-         infoElement.classList.add('highlight');
+       if (nilaiH3.toUpperCase().indexOf(filter) > -1 || nilaiInfo.toUpperCase().indexOf(filter) > -1) {
+           kotakItems[i].style.display = "";
        } else {
-         infoElement.classList.remove('highlight');
+           kotakItems[i].style.display = "none";
        }
-     });
-   });
- });
-
+   }
+}
