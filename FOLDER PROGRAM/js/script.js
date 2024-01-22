@@ -79,5 +79,11 @@ function cari() {
        } else {
            kotakItems[i].style.display = "none";
        }
+
+       // Hentikan pencarian setelah menemukan item yang cocok
+       if (nilaiH3.toUpperCase().indexOf(filter) > -1 || nilaiInfo.toUpperCase().indexOf(filter) > -1) {
+           break;
+       }
    }
 }
+

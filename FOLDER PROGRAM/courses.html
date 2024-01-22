@@ -278,29 +278,7 @@
 </footer>
 
 <!-- custom js file link  -->
-<script src="js/script.js">
-
-function cari() {
-    let filter = document.getElementById('search-input').value.toUpperCase();
-    let kotakItems = document.querySelectorAll('.box');
-
-    for (let i = 0; i < kotakItems.length; i++) {
-        let h3Element = kotakItems[i].querySelector('.title');
-        let infoElement = kotakItems[i].querySelector('.info');
-
-        let nilaiH3 = h3Element.innerHTML || h3Element.innerText || h3Element.textContent;
-        let nilaiInfo = infoElement.innerHTML || infoElement.innerText || infoElement.textContent;
-
-        if (nilaiH3.toUpperCase().indexOf(filter) > -1 || nilaiInfo.toUpperCase().indexOf(filter) > -1) {
-            kotakItems[i].style.display = "";
-        } else {
-            kotakItems[i].style.display = "none";
-        }
-    }
-}
-
-   
-</script>
+<script src="js/script.js"></script>
 
    
 </body>
