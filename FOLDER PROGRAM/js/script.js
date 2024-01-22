@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
      const searchTerm = searchBox.value.trim().toLowerCase();
 
      // Dapatkan semua elemen dengan kelas "info"
-     const infoElements = document.querySelectorAll('.info');
+     const infoElements = document.querySelectorAll('.info','.title');
 
      // Iterasi melalui elemen-elemen tersebut dan lakukan tindakan sesuai
      infoElements.forEach(function(infoElement) {
