@@ -62,3 +62,31 @@ window.onscroll = () =>{
       body.classList.remove('active');
    }
 }
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+   const searchForm = document.getElementById('search-form');
+   const searchBox = document.getElementById('search-box');
+
+   searchForm.addEventListener('submit', function(event) {
+     event.preventDefault(); // Mencegah perilaku pengiriman formulir default
+
+     // Dapatkan istilah pencarian
+     const searchTerm = searchBox.value.trim().toLowerCase();
+
+     // Dapatkan semua elemen dengan kelas "info"
+     const infoElements = document.querySelectorAll('.info');
+
+     // Iterasi melalui elemen-elemen tersebut dan lakukan tindakan sesuai
+     infoElements.forEach(function(infoElement) {
+       // Misalnya, tambahkan kelas "highlight" ke elemen dengan kelas "info" yang mengandung istilah pencarian
+       if (infoElement.textContent.toLowerCase().includes(searchTerm)) {
+         infoElement.classList.add('highlight');
+       } else {
+         infoElement.classList.remove('highlight');
+       }
+     });
+   });
+ });
+
