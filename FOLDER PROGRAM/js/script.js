@@ -67,23 +67,18 @@ function cari() {
    let filter = document.getElementById('search-input').value.toUpperCase();
    let kotakItems = document.querySelectorAll('.box');
 
-   for (let i = 0; i < kotakItems.length; i++) {
-       let h3Element = kotakItems[i].querySelector('.title');
-       let infoElement = kotakItems[i].querySelector('.info');
+   kotakItems.forEach((item) => {
+       let h3Element = item.querySelector('.title');
+       let infoElement = item.querySelector('.info');
 
        let nilaiH3 = h3Element.innerHTML || h3Element.innerText || h3Element.textContent;
        let nilaiInfo = infoElement.innerHTML || infoElement.innerText || infoElement.textContent;
 
-       if (nilaiH3.toUpperCase().indexOf(filter) > -1 || nilaiInfo.toUpperCase().indexOf(filter) > -1) {
-           kotakItems[i].style.display = "";
-       } else {
-           kotakItems[i].style.display = "none";
-       }
+       let matchFound = nilaiH3.toUpperCase().includes(filter) || nilaiInfo.toUpperCase().includes(filter);
 
-       // Hentikan pencarian setelah menemukan item yang cocok
-       if (nilaiH3.toUpperCase().indexOf(filter) > -1 || nilaiInfo.toUpperCase().indexOf(filter) > -1) {
-           break;
-       }
-   }
+       item.style.display = matchFound ? "" : "none";
+   });
 }
+
+
 
