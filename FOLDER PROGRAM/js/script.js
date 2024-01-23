@@ -63,22 +63,35 @@ window.onscroll = () =>{
    }
 }
 
-function cari() {
-   let filter = document.getElementById('search-input').value.toUpperCase();
-   let kotakItems = document.querySelectorAll('.box');
 
-   kotakItems.forEach((item) => {
-       let h3Element = item.querySelector('.title');
-       let infoElement = item.querySelector('.info');
-
-       let nilaiH3 = h3Element.innerHTML || h3Element.innerText || h3Element.textContent;
-       let nilaiInfo = infoElement.innerHTML || infoElement.innerText || infoElement.textContent;
-
-       let matchFound = nilaiH3.toUpperCase().includes(filter) || nilaiInfo.toUpperCase().includes(filter);
-
-       item.style.display = matchFound ? "" : "none";
+document.addEventListener("DOMContentLoaded", function () {
+   const searchForm = document.getElementById("search-input");
+   const searchBox = searchForm.querySelector("input[name='search_box']");
+   const courseBoxes = document.querySelectorAll(".box");
+ 
+   searchForm.addEventListener("submit", function (event) {
+     event.preventDefault();
+     performSearch();
    });
-}
-
+ 
+   function performSearch() {
+     const searchTerm = searchBox.value.toLowerCase();
+ 
+     courseBoxes.forEach(function (box) {
+       const infoElement = box.querySelector(".info");
+       const titleElement = box.querySelector(".title");
+ 
+       const infoText = infoElement.innerText.toLowerCase();
+       const titleText = titleElement.innerText.toLowerCase();
+ 
+       if (infoText.includes(searchTerm) || titleText.includes(searchTerm)) {
+         box.style.display = "block"; // Show the box
+       } else {
+         box.style.display = "none"; // Hide the box
+       }
+     });
+   }
+ });
+ 
 
 
