@@ -56,8 +56,8 @@
                      required>
                </div>
                <div class="form-group col-md-6 mb-3">
-                  <label for="txt_jurusan">Jurusan</label>
-                  <input type="text" name="Jurusan" class="form-control" id="txt_jurusan" placeholder="Input Jurusan"
+                  <label for="txt_mapel">Mata Pelajaran</label>
+                  <input type="text" name="Jurusan" class="form-control" id="txt_mapel" placeholder="Input Mapel"
                      required>
                </div>
                <div class="form-group col-md-6 mb-3">
@@ -86,7 +86,7 @@
                   <tr>
                      <th class="frame_table frame_header" style="width: 5%">Aksi</th>
                      <th class="frame_table frame_header" style="width: 10%">Kelas</th>
-                     <th class="frame_table frame_header" style="width: 10%">Jurusan</th>
+                     <th class="frame_table frame_header" style="width: 10%">Mata Pelajaran</th>
                      <th class="frame_table frame_header" style="width: 25%">Judul Materi</th>
                      <th class="frame_table frame_header" style="width: 40%">Deskripsi</th>
                      <th class="frame_table frame_header" style="width: 10%">File</th>
@@ -98,7 +98,7 @@
    </section>
    <script>
       let txt_kelas = document.querySelector("#txt_kelas");
-      let txt_jurusan = document.querySelector("#txt_jurusan");
+      let txt_mapel = document.querySelector("#txt_mapel");
       let txt_judul = document.querySelector("#txt_judul");
       let txt_deskripsi = document.querySelector("#txt_deskripsi");
       let file_dokumen = document.querySelector("#file_dokumen");
@@ -108,11 +108,11 @@
       let data = [];
 
       btn_tambah.addEventListener("click", () => {
-         if (txt_kelas.value == "" || txt_jurusan.value == "" || txt_judul.value == "" || txt_deskripsi.value == "" || file_dokumen.value == "") {
+         if (txt_kelas.value == "" || txt_mapel.value == "" || txt_judul.value == "" || txt_deskripsi.value == "" || file_dokumen.value == "") {
             alert("Lengkapi Seluruh Data !");
          }
          else {
-            data.push([txt_kelas.value, txt_jurusan.value, txt_judul.value, txt_deskripsi.value, file_dokumen.value]);
+            data.push([txt_kelas.value, txt_mapel.value, txt_judul.value, txt_deskripsi.value, file_dokumen.value]);
 
             viewData();
          }
@@ -124,7 +124,7 @@
             `<tr>
               <th class="frame_table frame_header" style="width: 5%">Aksi</th>
               <th class="frame_table frame_header" style="width: 10%">Kelas</th>
-              <th class="frame_table frame_header" style="width: 10%">Jurusan</th>
+              <th class="frame_table frame_header" style="width: 10%">Mata Pelajaran</th>
               <th class="frame_table frame_header" style="width: 25%">Judul Materi</th>
               <th class="frame_table frame_header" style="width: 40%">Deskripsi</th>
               <th class="frame_table frame_header" style="width: 10%">File</th>
